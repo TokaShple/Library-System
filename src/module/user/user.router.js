@@ -1,0 +1,13 @@
+import {Router} from 'express';
+import { getAllUsers,confirmEmail, forgetPassword, logout, resetPassword, signin, signup, softDeleted, updateUser } from './controller/user.controller.js';
+const userRouter=Router();
+userRouter.get('/allUsers',getAllUsers);
+userRouter.post('/signup',signup);
+userRouter.get('/user/confirmEmail/:token',confirmEmail);
+userRouter.patch('/user/resetPassword',forgetPassword);
+userRouter.patch('/resetPassword/:token',resetPassword);
+userRouter.post('/signin',signin);
+userRouter.put('/logout',logout);
+userRouter.delete('/softDeleted',softDeleted);
+userRouter.put('/updateUser',updateUser);
+export default userRouter;
